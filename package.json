@@ -1,0 +1,32 @@
+{
+    "name": "html-utilities",
+    "main": "./lib/index.js",
+    "version": "0.0.0",
+    "description": "Gives access to several utilities in HTML",
+    "keywords": [
+        "HTML",
+        "utilities",
+        "utility",
+        "util",
+        "extra functionality"
+    ],
+    "repository": "https://github.com/atom/first-package",
+    "license": "MIT",
+    "engines": {
+        "atom": ">=1.0.0 <2.0.0"
+    },
+    "dependencies": {
+        "atom-ts-transpiler": "^1.2.2",
+        "typescript": "^2.5.3"
+    },
+    "devDependencies": {
+        "@types/atom": "^1.21.5",
+        "@types/node": "^8.0.47"
+    },
+    "atomTranspilers": [
+        {
+            "glob": "+(lib|spec)/**/*.ts",
+            "transpiler": "atom-ts-transpiler"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "menu": [
+        {
+            "label": "Packages",
+            "submenu": [
+                {
+                    "label": "HTML utilities",
+                    "submenu": [
+                        {
+                            "label": "run",
+                            "command": "html-utilities:equalizer"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

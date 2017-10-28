@@ -1,0 +1,5 @@
+{
+    "atom-text-editor[data-grammar~='html']": {
+        "=": "html-utilities:equalquotes"
+    }
+}
