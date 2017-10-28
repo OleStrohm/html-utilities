@@ -2,7 +2,7 @@
     "name": "html-utilities",
     "main": "./lib/index.js",
     "version": "0.0.0",
-    "description": "Gives access to several utilities in HTML",
+    "description": "A package giving access to several utilities in HTML",
     "keywords": [
         "HTML",
         "utilities",
@@ -10,7 +10,7 @@
         "util",
         "extra functionality"
     ],
-    "repository": "https://github.com/atom/first-package",
+    "repository": "https://github.com/OleStrohm/html-utilities",
     "license": "MIT",
     "engines": {
         "atom": ">=1.0.0 <2.0.0"
