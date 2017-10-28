@@ -111,9 +111,6 @@ export default class HTMLUtilities {
                     column = 0;
                 }
             } else {
-                if (lines[row].charAt(column) == "\"") {
-                    inText = !inText;
-                }
                 if(!inText) {
                     if (column > 0 && lines[row].charAt(column-1) == "<") {
                         if(tagStart != null) {
@@ -136,6 +133,9 @@ export default class HTMLUtilities {
                         tagStart = null;
                     }
                 }
+                if (lines[row].charAt(column) == '"') {
+                    inText = !inText;
+                }
             }
             if(row == cursorPos.row && column == cursorPos.column && !inTag) {
                 return;
@@ -148,6 +148,7 @@ export default class HTMLUtilities {
             }
         }
 
+
         var tagPairs = [];
         var tagStack = [];
 
@@ -155,11 +156,10 @@ export default class HTMLUtilities {
             let tag: HTMLTag = tags[i];
             if(tag.text.startsWith("/")) {
                 let pairedTag = null;
-                for(let j = 0; j < tagStack.length; j++) {
-                    if(tagStack[j].text == tag.text.substr(1)) {
-                        pairedTag = tagStack[j];
-                        tagStack.splice(j, 1);
-                        break;
+                while(pairedTag == null && tagStack.length > 0) {
+                    pairedTag = tagStack.pop();
+                    if(pairedTag.text != tag.text.substr(1)) {
+                        pairedTag = null;
                     }
                 }
                 if(pairedTag == null) {
